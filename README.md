@@ -8,7 +8,7 @@ A secure and scalable UPI (Unified Payments Interface) Payment System that simul
 
 - 🔐 User Registration & Login  
 - 🏦 Bank Account Linking  
-- 💰 Check Account Balance  
+- 💰 Check Account Balance   
 - 📤 Send Money via UPI ID  
 - 📥 Receive Money  
 - 📜 Transaction History  
