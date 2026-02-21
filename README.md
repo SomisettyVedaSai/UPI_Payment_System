@@ -1,130 +1,173 @@
-# 💳 UPI Payment System
+# 💳 UPI Payment System (Java Console Application)
 
-A secure and scalable UPI (Unified Payments Interface) Payment System that simulates real-world digital payment transactions. This project demonstrates how online payments, user authentication, transaction processing, and balance management work in a banking/payment ecosystem.
+A fully object-oriented UPI Payment System built using Java.  
+This project simulates real-world digital payment operations such as UPI transfers, bill payments, recharges, transaction logging, and notifications.
+
+The system is designed using clean architecture principles with interfaces, service layers, custom exceptions, and file handling for transaction storage.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 User Registration & Login  
-- 🏦 Bank Account Linking  
-- 💰 Check Account Balance   
-- 📤 Send Money via UPI ID  
-- 📥 Receive Money  
-- 📜 Transaction History  
-- ✅ Secure Payment Validation  
-- ⚡ Real-time Transaction Processing  
+### 👤 User & Account Management
+- Create Users
+- Create Bank Accounts
+- Link Bank Account to UPI Account
+- Maintain Account Balance
+
+### 💸 Payment Services
+- UPI Money Transfer
+- Mobile Recharge
+- Electricity Bill Payment
+- FASTag Recharge
+- International Transfer
+
+### 📜 Transaction Handling
+- Transaction history stored in `transactions.txt`
+- File-based transaction persistence
+- Transaction object modeling
+
+### 🔔 Notifications
+- SMS Notification Service (Simulated)
+
+### ⚠️ Exception Handling
+- Custom Exception: `UPIException`
+- `InsufficientBalanceException`
+- `InvalidUPIPinException`
+- Proper validation & secure transaction flow
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Project Structure
 
-Frontend:
-- HTML
-- CSS
-- JavaScript
-
-Backend:
-- (Add your backend technology here: Node.js / Java / Python / etc.)
-
-Database:
-- (Add your database here: MySQL / MongoDB / PostgreSQL / etc.)
-
----
-
-## 📂 Project Structure
-
-UPI-Payment-System/
+```
+UPI_Payment_System
 │
-├── frontend/
-│   ├── index.html
-│   ├── login.html
-│   ├── dashboard.html
-│   └── styles.css
+├── src
+│   ├── main
+│   │   └── MainApp.java
+│   │
+│   ├── model
+│   │   ├── User.java
+│   │   ├── Bank.java
+│   │   ├── BankAccount.java
+│   │   ├── UPIAccount.java
+│   │   ├── Transaction.java
+│   │   ├── PaymentRequest.java
+│   │   ├── MobileRechargeRequest.java
+│   │   ├── ElectricityBillRequest.java
+│   │   ├── FastagRechargeRequest.java
+│   │   ├── InternationalTransferRequest.java
+│   │   └── UPIRegistry.java
+│   │
+│   ├── interfaces
+│   │   ├── PaymentService.java
+│   │   ├── BillPaymentService.java
+│   │   └── NotificationService.java
+│   │
+│   ├── services
+│   │   ├── UPIPaymentServiceImpl.java
+│   │   ├── FileTransactionService.java
+│   │   └── SMSNotificationService.java
+│   │
+│   └── exceptions
+│       ├── UPIException.java
+│       ├── InsufficientBalanceException.java
+│       └── InvalidUPIPinException.java
 │
-├── backend/
-│   ├── server.js (or app.py / Main.java)
-│   └── routes/
-│
-├── database/
-│   └── schema.sql
-│
-└── README.md
+└── transactions.txt
+```
 
 ---
 
-## ⚙️ Installation & Setup
+## 🧠 Core Concepts Used
 
-### 1. Clone the Repository
-
-git clone https://github.com/your-username/UPI-Payment-System.git
-cd UPI-Payment-System
-
-### 2. Install Dependencies
-
-npm install
-
-(If using Node.js — change accordingly for your backend)
-
-### 3. Run the Server
-
-npm start
-
-or
-
-node server.js
-
-### 4. Open in Browser
-
-http://localhost:3000
+- Object-Oriented Programming (OOP)
+- Abstraction using Interfaces
+- Inheritance
+- Polymorphism
+- Encapsulation
+- Custom Exception Handling
+- File Handling in Java
+- Modular Programming (module-info.java)
 
 ---
 
-## 🧠 How It Works
+## ⚙️ How to Run the Project
 
-1. User registers and creates an account.
-2. User links a bank account.
-3. User can send money using a UPI ID.
-4. System validates:
-   - Sufficient balance
-   - Valid UPI ID
-5. Transaction is processed and recorded.
-6. Updated balance is shown in dashboard.
+### 1️⃣ Open in IDE
+Import the project into:
+- IntelliJ IDEA
+- Eclipse
+- VS Code (with Java Extension)
 
----
+### 2️⃣ Compile Using Terminal
 
-## 🔒 Security Features
+```
+javac -d bin src/**/*.java
+```
 
-- Password hashing
-- Input validation
-- Transaction verification
-- Secure API endpoints
+### 3️⃣ Run the Application
 
----
+```
+java main.MainApp
+```
 
-## 📌 Future Enhancements
-
-- Push Notifications  
-- Admin Dashboard  
-- Mobile Responsive UI  
-- Multiple Bank Integration  
-- Two-Factor Authentication  
+Or directly run `MainApp.java` from your IDE.
 
 ---
 
-## 🎯 Use Case
+## 🔐 Security Features
+
+- UPI PIN validation
+- Insufficient balance checks
+- Controlled transaction flow
+- Custom exception handling for secure operations
+
+---
+
+## 📂 Transaction Storage
+
+All transactions are saved in:
+
+```
+transactions.txt
+```
+
+This ensures:
+- Transaction persistence
+- Record keeping
+- File-based logging system
+
+---
+
+## 🎯 Learning Outcomes
 
 This project demonstrates:
-- Digital payment workflows  
-- Backend transaction management  
-- Database integration  
-- Real-world fintech system simulation  
+
+- Real-world fintech payment simulation
+- Clean layered architecture
+- Service-based design
+- Proper exception handling
+- File persistence mechanism
+- Interface-driven development
 
 Suitable for:
-- Academic projects  
-- Hackathons  
-- Resume portfolio  
-- Learning full-stack development  
+- Java OOP Practice
+- Academic Projects
+- Interview Preparation
+- Backend System Design Basics
+
+---
+
+## 🔮 Future Enhancements
+
+- Database Integration (MySQL)
+- REST API conversion (Spring Boot)
+- GUI using JavaFX / Swing
+- Real SMS API integration
+- Secure PIN encryption
+- Admin dashboard
 
 ---
 
@@ -137,4 +180,4 @@ B.Tech CSE Student
 
 ## 📄 License
 
-This project is for educational purposes only.
+This project is developed for educational purposes only.
